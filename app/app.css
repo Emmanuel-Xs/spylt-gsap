@@ -1,15 +1,62 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "ProximaNova";
+  src: url("/fonts/ProximaNova-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Antonio";
+  src: url("/fonts/Antonio-VariableFont_wght.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-proxima: "ProximaNova", ui-sans-serif, system-ui, sans-serif;
+  --font-antonio: "Antonio", sans-serif;
+
+  --color-black: #222123;
+  --color-main-bg: #232224;
+  --color-white: #ffffff;
+  --color-dark-brown: #523122;
+  --color-mid-brown: #a26833;
+  --color-light-brown: #e3a458;
+  --color-red-brown: #7f3b2d;
+  --color-yellow-brown: #a26833;
+  --color-milk-yellow: #e3d3bc;
+  --color-red: #a02128;
+  --color-milk: #faeade;
 }
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  font-family: "Antonio", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+audio,
+canvas,
+progress,
+video {
+  vertical-align: baseline;
+  display: inline-block;
+}
+
+a:active,
+a:hover {
+  outline: 0;
 }
