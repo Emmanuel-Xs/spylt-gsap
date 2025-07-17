@@ -18,7 +18,7 @@
 
 @theme {
   --font-proxima: "ProximaNova", ui-sans-serif, system-ui, sans-serif;
-  --font-antonio: "Antonio", sans-serif;
+  --font-antonio: "Antonio", ui-sans-serif, system-ui, sans-serif;
 
   --color-black: #222123;
   --color-main-bg: #232224;
@@ -33,21 +33,6 @@
   --color-milk: #faeade;
 }
 
-html,
-body {
-  font-family: "Antonio", sans-serif;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
-}
-
-body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}
-
 audio,
 canvas,
 progress,
@@ -59,4 +44,34 @@ video {
 a:active,
 a:hover {
   outline: 0;
+}
+
+html,
+body {
+  font-family: var(--font-antonio);
+  background-color: var(--color-milk);
+  color: var(--color-dark-brown);
+
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+  .col-center {
+    @apply flex flex-col justify-center items-center;
+  }
+  .abs-center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
 }
