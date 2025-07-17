@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "tailwindcss-logical";
 
 @font-face {
   font-family: "ProximaNova";
@@ -20,17 +21,28 @@
   --font-proxima: "ProximaNova", ui-sans-serif, system-ui, sans-serif;
   --font-antonio: "Antonio", ui-sans-serif, system-ui, sans-serif;
 
-  --color-black: #222123;
-  --color-main-bg: #232224;
+  /* Base Colors */
   --color-white: #ffffff;
-  --color-dark-brown: #523122;
-  --color-mid-brown: #a26833;
-  --color-light-brown: #e3a458;
-  --color-red-brown: #7f3b2d;
-  --color-yellow-brown: #a26833;
-  --color-milk-yellow: #e3d3bc;
-  --color-red: #a02128;
-  --color-milk: #faeade;
+
+  /* Primary Palette (Milk Range) */
+  --color-primary-100: #fef3f0; /* Very Light */
+  --color-primary-200: #fef4f1;
+  --color-primary-300: #faeade; /* Milk */
+  --color-primary-400: #e3d3bc; /* Milk Yellow */
+
+  /* Secondary Palette (Brown Accent) */
+  --color-secondary-500: #e3a458; /* Light Brown */
+  --color-secondary-600: #a26833; /* Mid Brown */
+  --color-secondary-700: #7f3b2d; /* Red Brown */
+  --color-secondary-800: #523122; /* Dark Brown */
+  --color-secondary-900: #3a2017;
+
+  /* Destructive Palette */
+  --color-destructive-500: #a02128;
+
+  /* Backgrounds */
+  --color-background: #222123;
+  --color-secondary-foreground: #333;
 }
 
 audio,
@@ -41,6 +53,12 @@ video {
   display: inline-block;
 }
 
+img {
+  vertical-align: middle;
+  max-width: 100%;
+  display: inline-block;
+}
+
 a:active,
 a:hover {
   outline: 0;
@@ -48,9 +66,11 @@ a:hover {
 
 html,
 body {
-  font-family: var(--font-antonio);
-  background-color: var(--color-milk);
-  color: var(--color-dark-brown);
+  font-family: var(--font-proxima);
+  font-weight: 400;
+
+  background-color: var(--color-background);
+  color: var(--color-secondary-foreground);
 
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -58,6 +78,9 @@ body {
   -ms-overflow-style: none; /* IE 10+ */
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
 }
 
 body::-webkit-scrollbar {
@@ -73,5 +96,12 @@ body::-webkit-scrollbar {
   }
   .abs-center {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+  .wrapper {
+    width: min(calc(100% - 4rem), 2500px);
+
+    @media (min-width: 1024px) {
+      width: min(calc(100% - 5rem), 2500px);
+    }
   }
 }

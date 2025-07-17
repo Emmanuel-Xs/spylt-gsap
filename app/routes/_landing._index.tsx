@@ -9,8 +9,10 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">FREAKING DELICIOUS!</h1>
-    </>
+    <main className="flex min-h-screen flex-col items-center justify-between pbs-24 ring bg-primary-300">
+      <h1 className="text-8xl font-bold underline font-antonio text-secondary-800">
+        FREAKING DELICIOUS
+      </h1>
+    </main>
   );
 }
