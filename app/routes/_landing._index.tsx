@@ -10,7 +10,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   return (
-    <main>
+    <main aria-label="main content">
       <HeroSection />
     </main>
   );
