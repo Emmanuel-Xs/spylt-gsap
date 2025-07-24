@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <main aria-label="main content">
       <HeroSection />
+      <div className="h-dvh"></div>
     </main>
   );
 }
